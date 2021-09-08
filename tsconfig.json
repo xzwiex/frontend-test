@@ -10,6 +10,7 @@
     "declaration": true,
     "noEmit": true,
     "skipLibCheck": true,
+    "strict": true,
     "lib": [
       "dom",
       "esnext",
