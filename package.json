@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/scentbird/scentbird-test-task"
+    "url": "https://github.com/scentbird/frontend-test"
   },
   "homepage": "",
-  "main": "./bin/server",
+  "main": "./src/index.tsx",
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack serve --mode=development --config ./webpack/client.js",
