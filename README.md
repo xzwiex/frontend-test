@@ -1,82 +1,82 @@
-# Тестовое задание на позицию frontend-разработчика в Scentbird
+# Test task for frontend developer position at Scentbird
 
-- Необходимо выполнить задание используя заготовку, доступную по ссылке: [frontend-test](https://github.com/scentbird/frontend-test)
+- It is necessary to develop the task, using the boilerplate, available at the link: [frontend-test](https://github.com/scentbird/frontend-test)
 
-- Ссылку на репозиторий с выполненным заданием прислать на andrei@scentbird.com
-
-
-## Инициализация
-
-- Установите необходимую версию nodejs (nvm или asdf)
-
-- Установка пакетов `npm install`
-
-- Запуск приложения для разработки `npm start`
-
-- Запуск приложения для продакшен сборки `npm run build`
-
-- Доступ к приложению в браузере `http://localhost:8080`
+- Send a link to the repository with the completed task to andrei@scentbird.com
 
 
-## Общее
+## Initializing
 
-1. Задание заключается в реализации SPA-приложение на React на TypeScript.
+- Install the correct version of nodejs (nvm or asdf)
 
-1. Использование типов **обязательно** для всех компонентов.
+- Installing packages `npm install`
 
-1. Обязательно использовать react-router для роутинга.
+- Launch an application for development `npm start`
 
-1. Для стилей SCSS (LESS, POSTCSS) с использованием css modules.
+- Launching an application for a production build `npm run build`
 
-1. Для работы с формой можно использовать любую библиотеку (formik, formular).
-
-1. В описании ниже помимо основных задач есть дополнительные задания, далее (ДОП). Их выполнение не обязательно, но будет плюсом, если вы их выполните.
-
-1. Желательно использовать современные фичи языка.
-
-1. Если возникают вопросы по заданию - не стесняйтесь задавайте.
+- Accessing the application in a browser `http://localhost:8080`
 
 
-## Задание
+## General
 
-В апп должен быть роутинг для навигации по страницам `/product/:id`, `/checkout`.
+1. The task is to implement a SPA application on React and using TypeScript.
 
-В дизайне `design/App.sketch` не представлена навигация по страницам - сделайте в шапке ссылки на эти страницы в любом виде на свое усмотрение. У ссылок должен быть дефолтный стиль и активный.
+1. Use of types **mandatory** for all components.
 
-### Страница товара
+1. It is mandatory to use react-router for routing.
 
-1. Страница состоит из двух колонок (desktop, tablet landscape): слева колонка с картинкой / справа колонка с информацией о товаре. Эти колонки должны быть резиновыми (ширина в %).
+1. For styles need to use SCSS styles (LESS, POSTCSS) using css modules.
 
-1. При выборе объема товара (1.7oz Subscription) должна изменяться информация в блоке выбранного товара (выше).
+1. Any library (formik, formular) can be used to work with the form.
 
-1. При клике на “Read more >” надпись должна заменяться на “< Show less” и раскрывать текст (текст можно использовать любой).
+1. In the description below in addition to the main tasks are additional tasks, it is marked as (DOP). They are not required, but will be a plus if you complete them.
 
-1. (ДОП) Обратить внимание на поведение кнопки “Add to queue” на разных экранах: если она помещается в один ряд с блоком “выбранный товар“, то она должна быть на одном уровне с ним, в противном случае переноситься на новую строку и занимать всю ширину экрана.
+1. We would like you to use modern language features.
 
-1. (ДОП) на мобильной версии обратить внимание на “1.7 oz One-time”, там скрыто слово “purchase”. Придумать решение как скрывать его, в противном случае можно везде писать без этого слова.
-
-### Страница формы
-
-1. Чекбокс *“Use this address…”* должен в отжатом состоянии отображать ниже такую же форму как (выше) *Shipping address*, за исключением поля *“Telephone”*. Заголовок у этой формы должен быть *“Billing address”*.
-
-1. Добавить валидацию в форму: в полях First Name, Last Name можно использовать только буквенные символы. В Street address - числа, пробелы, тире, буквы. Все поля кроме Apt/Suite должны быть required.
-
-1. При сабмите в консоль должна выводиться объект с данными о полях.
-
-1. (ДОП) Можно использовать нативные селекты в форме, но будет плюсом написание своего компонента выпадающего списка.
-
-1. (ДОП) Кнопка Back должна вести на страницу с которой был сделан переход.
+1. If you have any questions about the task - do not hesitate to ask.
 
 
-### Инфраструктура
+## Task
 
-1. (ДОП) Сделать экспорт стилей в отдельный файл для production сборки
+The application should have routing to navigate on the `/product/:id`, `/checkout` pages.
 
-2. (ДОП) Использовать реальные данные для страницы продукта из публичного graphql.
+The design `design/App.sketch` does not provide page navigation - make the header links to these pages in any way you see fit. Links should have default and active styles.
+
+### Product page
+
+1. The page contains two columns (desktop, tablet landscape styles): a picture column on the left side / a product information column on the right side. These columns should be adaptive (width in %).
+
+1. When selecting the volume of an item (1.7oz Subscription), the information in the selected item block (above) should change.
+
+1. When you click on "Read more >" the inscription should be replaced by "< Show less" and open the text (you can use any text).
+
+1. (DOP) Pay attention to the behavior of the "Add to queue" button on different screens: if it is placed in the same row as the "selected item" block, it should be on the same level with it, otherwise it is moved to a new line and occupies the entire width of the screen.
+
+1. (DOP) On the mobile version, pay attention to "1.7 oz One-time", the word "purchase" is hidden there. Come up with a solution to hide it, otherwise you can write everywhere without the word.
+
+### Form Page
+
+1. The *"Use this address... "* checkbox should display the same form below as the *Shipping address* form above, except for the *"Telephone "* field. The title of this form should be *"Billing address "*.
+
+1. Add validation to the form: only alphabetic characters can be used in First Name, Last Name fields. In Street address - numbers, spaces, dashes, letters. All fields except Apt/Suite should be required.
+
+1. When the form is submitted, the console should display an object with field data
+
+1. (DOP) You can use native selections in the form, but it would be a plus to write your own drop-down list component.
+
+1. (DOP) The Back button should lead to the page from which the transition was made.
+
+
+### Infrastructure
+
+1. (DOP) Export styles to a separate file for production builds
+
+2. (DOP) Use real data for the product page from public graphql.
 
 Endpoint: `https://api.scentbird.com/graphql`
 
-Пример запроса продукта:
+An example of a product request:
 ```graphql
 query Product {
   product(input: { slug: "1000"}) {
