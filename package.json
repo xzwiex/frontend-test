@@ -10,7 +10,9 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack serve --mode=development --config ./webpack/client.js",
-    "build": "rimraf ./build && cross-env NODE_ENV=production webpack --config ./webpack/client.js"
+    "build": "rimraf ./build && cross-env NODE_ENV=production webpack --config ./webpack/client.js",
+    "gql:schema": "npx apollo service:download --endpoint=http://localhost:8080/graphql graphql-schema.json",
+    "gql:typings": "npx apollo codegen:generate --localSchemaFile=graphql-schema.json --target=typescript --tagName=gql    "
   },
   "engines": {
     "node": "=14.15.5",
@@ -24,11 +26,14 @@
     "@babel/preset-typescript": "^7.15.0",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
+    "@types/react-helmet": "^6.1.2",
+    "@types/react-router-dom": "^5.3.0",
     "babel-loader": "^8.2.2",
     "classnames": "^2.3.1",
     "cross-env": "^7.0.3",
     "css-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.3.0",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -39,5 +44,15 @@
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.1.1",
     "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.4.13",
+    "formik": "^2.2.9",
+    "graphql": "^15.6.0",
+    "normalize.css": "^8.0.1",
+    "react-helmet": "^6.1.0",
+    "react-router": "^5.2.1",
+    "react-router-dom": "^5.3.0",
+    "yup": "^0.32.9"
   }
 }

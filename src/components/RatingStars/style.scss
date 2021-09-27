@@ -1,0 +1,33 @@
+@import "../../styles/variables.scss";
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 0;
+}
+
+.stars {
+    width: 80px;
+    margin-right: 15px;
+}
+
+.starsFill {
+    overflow: hidden;
+    margin-top: -20px;
+}
+
+.starBg {
+    color: $color-hint;
+}
+
+.starFg {
+    color: $color-primary;
+}
+
+@media (min-width: $container-md) {
+    .container {
+        justify-content: flex-start;
+    }
+}

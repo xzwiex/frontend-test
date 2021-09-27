@@ -1,0 +1,54 @@
+@import "../../styles/variables.scss";
+
+.h1 {
+    font-family: $font-main;
+    font-size: 32px;
+}
+
+.h2 {
+    font-family: $font-main;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.h3 {
+    font-family: $font-main;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    margin: 0;
+    text-align: center;
+    margin: 10px 0;
+    color: $color-gray-2;
+}
+
+.h4 {
+    font-family: $font-main;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    margin: 0;
+    text-align: center;
+    margin: 10px 0;
+    color: $color-gray-2;
+}
+
+.p {
+    font-family: $font-main;
+    font-size: 14px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+@media (min-width: $container-md) {
+    .h2,
+    .h3,
+    .h4 {
+        text-align: left;
+    }
+}

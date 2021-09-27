@@ -1,0 +1,13 @@
+@import "../../styles/variables.scss";
+
+.button {
+    background: $color-primary;
+    border: 0;
+    color: $color-white;
+    border: 0;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 30px;
+    transition: $transition;
+    text-transform: uppercase;
+}

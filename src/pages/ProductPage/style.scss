@@ -1,0 +1,217 @@
+@import "../../styles/variables.scss";
+
+.container {
+    padding: 40px 15px;
+}
+
+.desktopImg {
+    display: none;
+}
+
+.img {
+    width: 100%;
+}
+
+.reviewsCount {
+    color: $color-hint;
+    text-transform: none;
+}
+
+.productImageContainer {
+    font-size: 26px;
+    text-align: right;
+    position: relative;
+
+    i {
+        position: absolute;
+        right: 20%;
+        top: 13%;
+    }
+}
+
+.imgSmall {
+    height: 40px;
+    width: auto;
+    margin: 0 15px 0 0;
+}
+
+.addButtonContainer {
+    border-top: 1px solid $color-border;
+    margin: 20px 0 10px 0;
+}
+
+.orderSummary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 20px 0;
+
+    p {
+        margin: 10px 0;
+    }
+}
+
+.addToQueueContainer {
+    display: flex;
+    flex-direction: row;
+
+    button {
+        flex: 1;
+    }
+}
+
+.typeSwitcher {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+
+.typeButton {
+    flex: 0 1 calc(50% - 5px);
+    background: none;
+    border: 1px solid $color-border;
+    margin: 10px 10px 10px 0;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+
+.typeButtonSelected {
+    border-color: $color-primary;
+}
+
+.typeButtonText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.showMoreLink {
+    color: $color-primary;
+    text-decoration: underline;
+}
+
+.tabList {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $color-hint;
+    height: 40px;
+    margin-top: 30px;
+}
+
+.tab {
+    flex: 1;
+    height: 39px;
+    line-height: 40px;
+    // margin-bottom: -1px;
+    text-transform: uppercase;
+    text-align: center;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: $color-border;
+    margin: 0 8px 0 0;
+    background-color: $color-white;
+    position: relative;
+    cursor: pointer;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.tabSelected {
+    padding-bottom: 1px;
+    border-color: $color-hint;
+}
+
+.tabPanels {
+    margin-top: 15px;
+}
+
+.tabPanel {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.descriptionTitle {
+    margin: 15px 0;
+}
+
+.showSm {
+    display: none;
+}
+
+@media (min-width: $container-sm) {
+    .container {
+        padding: 40px;
+    }
+
+    .showSm {
+        display: inline;
+    }
+
+    .addButtonContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media (min-width: $container-md) {
+    .container {
+        padding: 40px;
+        // Fixed by design, responsive by specs
+        max-width: 1024px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .desktopImg {
+        display: block;
+        flex: 1 1 43%;
+    }
+
+    .content {
+        display: block;
+        flex: 1 1 55%;
+    }
+
+    .mobileImg {
+        display: none;
+    }
+
+    .addButtonContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .addToQueueContainer {
+        width: 100%;
+    }
+
+    .typeButtonText {
+        display: inline;
+        text-align: left;
+    }
+}
+
+@media (min-width: $container-lg) {
+    .addButtonContainer {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .addToQueueContainer {
+        width: auto;
+    }
+}

@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge').default
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const isProduction = process.env.NODE_ENV === 'production'
 const basePath = (file) => path.resolve(process.cwd(), file)
@@ -22,16 +23,18 @@ const base = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          // 'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
         ]
       },
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: 'style-loader',
-          },
+          // {
+          //   loader: 'style-loader',
+          // },
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -77,7 +80,22 @@ const base = {
       filename: 'index.html',
       inject: 'body',
     }),
+    new MiniCssExtractPlugin(),
   ],
+  devServer: {
+    historyApiFallback: true,
+    proxy: {
+      '/graphql': {
+        target: 'https://api.scentbird.com/',
+        secure: false,
+        changeOrigin: true,
+        bypass: function (req, res, proxyOptions) {
+          req.headers.origin = 'https://api.scentbird.com/' // TODO: wtf
+        },
+      }
+
+    },
+  },
 }
 
 if (isProduction) {
@@ -85,7 +103,7 @@ if (isProduction) {
     mode: 'production',
     devtool: 'source-map',
   })
-} 
+}
 else {
   module.exports = merge(base, {
     mode: 'development',
